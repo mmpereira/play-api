@@ -6,7 +6,7 @@ import play.GlobalSettings;
 
 
 public class Global extends GlobalSettings {
-	private ApplicationContext ctx;
+	private static ApplicationContext ctx;
 
     @Override
     public void onStart(Application app) {
@@ -18,4 +18,10 @@ public class Global extends GlobalSettings {
         return ctx.getBean(clazz);
     }
 
+//    public static <T> T getBean(Class<T> beanClass) {
+//        if (ctx == null) {
+//            throw new IllegalStateException("application context is not initialized");
+//        }
+//        return ctx.getBean(beanClass);
+//    }
 }

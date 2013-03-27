@@ -4,8 +4,14 @@
 
 # Home page
 GET     /                           controllers.Application.index()
+#GET     /login                              controllers.Application.login()
+#POST    /login                              controllers.Application.authenticate()
+#GET     /logout                             controllers.Application.logout()
 
-GET		/publication/:id			@controllers.PublicationController.get(id: Int)
+GET		/publication/list				@controllers.PublicationController.list(title: String ?= null)
+GET		/publication/:id				@controllers.PublicationController.get(id: Long)
+GET 	/publication/superlist/:id		@controllers.PublicationController.superlist(id: Long)
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
